@@ -7,8 +7,8 @@ set -u
 function main() {
   echo "Printing secrets PoC"
   echo "DigitalOcean Token: $DIGITALOCEAN_TOKEN"
-	echo "Aws key id: $AWS_ACCESS_KEY_ID"
-	echo "Aws secret key: $AWS_SECRET_ACCESS_KEY"
+  echo "Aws key id: $AWS_ACCESS_KEY_ID"
+  echo "Aws secret key: $AWS_SECRET_ACCESS_KEY"
  
   local template
   template="$1"
