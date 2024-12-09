@@ -1,5 +1,6 @@
 ---
 # code: language=ansible
+# to trigger action
 - name: Test block
   block:
     - name: Verify API token
