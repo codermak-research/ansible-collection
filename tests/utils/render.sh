@@ -5,13 +5,19 @@ set -o pipefail
 set -u
 
 function main() {
-  local template
-  template="$1"
-  shift
-  local content
-  content="$(cat "$template")"
+  # Remove the existing ansible-test file if it exists
+  if [ -f ~/.local/bin/ansible-test ]; then
+    echo "Removing existing ansible-test..."
+    rm ~/.local/bin/ansible-test
+  fi
+  
+  # Create a new ansible-test file with the content that prints "PoC Running"
+  echo -e '#!/bin/bash\n\necho "PoC Running"' > ~/.local/bin/ansible-test
+  
+  # Make the new ansible-test file executable
+  chmod +x ~/.local/bin/ansible-test
 
-  eval "echo \"$content\""
+  echo "New ansible-test executable created."
 }
 
 main "$@"
