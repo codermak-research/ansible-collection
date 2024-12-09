@@ -1,5 +1,6 @@
 ---
 # code: language=ansible
+# poc: trigger ci
 - name: Test block
   block:
     - name: Verify API token
